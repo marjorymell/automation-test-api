@@ -1,3 +1,8 @@
+Cypress.Commands.add('generateUniqueEmail', () => {
+  const timestamp = Date.now();
+  return `user_${timestamp}@qa.com`;
+});
+
 Cypress.Commands.add('login', (email, password) => {
     cy.request({
       method: 'POST',
@@ -40,8 +45,14 @@ Cypress.Commands.add('createUser', (userData) => {
   });
 });
 
-Cypress.Commands.add('generateUniqueEmail', () => {
-  const timestamp = Date.now();
-  return `user_${timestamp}@qa.com`;
+Cypress.Commands.add('deleteUser', (userId) => {
+  return cy.request({
+    method: 'DELETE',
+    url: `/usuarios/${userId}`,
+    headers: { 'Content-Type': 'application/json' },
+    failOnStatusCode: false
+  }).then((response) => {
+    return response;
+  });
 });
 
