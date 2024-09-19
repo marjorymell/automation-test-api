@@ -27,4 +27,21 @@ Cypress.Commands.add('getUserById', (userId) => {
       return response; 
     });
 });
-  
+
+Cypress.Commands.add('createUser', (userData) => {
+  return cy.request({
+    method: 'POST',
+    url: '/usuarios',
+    body: userData,
+    headers: { 'Content-Type': 'application/json' },
+    failOnStatusCode: false
+  }).then((response) => {
+    return response; 
+  });
+});
+
+Cypress.Commands.add('generateUniqueEmail', () => {
+  const timestamp = Date.now();
+  return `user_${timestamp}@qa.com`;
+});
+
