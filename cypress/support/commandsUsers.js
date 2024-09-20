@@ -68,4 +68,3 @@ Cypress.Commands.add('editUser', (userId, updatedUserData) => {
   });
 });
 
-
