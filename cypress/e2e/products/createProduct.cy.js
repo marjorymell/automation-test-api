@@ -9,7 +9,7 @@ describe('Product Creation API Testing', () => {
       cy.fixture('product').as('productData');
     });
     
-      it('POST create product with successs', function() {
+      it('POST product with successs', function() {
         cy.generateRandomProductName().then((randomProductName) => {
             const productData = {
                 nome: randomProductName,
@@ -26,14 +26,14 @@ describe('Product Creation API Testing', () => {
         });
       });
   
-    it('POST create product - Duplicate Product Error', function() {
+    it('POST product with duplicate product error', function() {
       cy.createProduct(this.productData.validProduct).then((response) => {
         expect(response.status).to.eq(400);
         expect(response.body).to.have.property('message', 'Já existe produto com esse nome');
       });
     });
 
-    it('POST create product - Invalid Token Error', function() {
+    it('POST product with invalid token error', function() {
       const productData = {
         nome: 'Produto Teste',
         preco: 100,
@@ -50,7 +50,7 @@ describe('Product Creation API Testing', () => {
       });
     });
 
-    it('POST create product - Not Admin User Error', function() {
+    it('POST product with not admin user error', function() {
       // Log in as a non-administrator user
       cy.fixture('credentials').as('userData').then((userData) => {
         cy.login(userData.validUserNotAdmin.email, userData.validUserNotAdmin.password).then((response) => {

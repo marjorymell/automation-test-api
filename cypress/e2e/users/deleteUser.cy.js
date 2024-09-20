@@ -1,8 +1,8 @@
 describe('Delete User API Testing', () => {
-    let creds;
+    let usersData;
     before(() => {
         cy.fixture('credentials').then((data) => {
-            creds = data; 
+            usersData = data; 
         });
 
         // Create a user before running the deletion tests
@@ -29,7 +29,7 @@ describe('Delete User API Testing', () => {
     });
 
     it('DELETE user with invalid id', function() {
-        const invalidUserId = creds.userIds.invalidUserId; 
+        const invalidUserId = usersData.userIds.invalidUserId; 
 
         cy.deleteUser(invalidUserId).then((response) => {
             expect(response.status).to.eq(200);
