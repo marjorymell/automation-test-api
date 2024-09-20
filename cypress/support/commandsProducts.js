@@ -34,3 +34,13 @@ Cypress.Commands.add('createProduct', (productData) => {
       return response; 
     });
 });
+
+Cypress.Commands.add('getProductById', (productId) => {
+  return cy.request({
+    method: 'GET',
+    url: `/produtos/${productId}`, 
+    failOnStatusCode: false 
+  }).then((response) => {
+    return response; 
+  });
+});

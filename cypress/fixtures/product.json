@@ -1,7 +1,13 @@
 {
-    "nome": "tetststetetette",
+  "validProduct": {
+    "nome": "Logitech MX Vertical",
     "preco": 470,
     "descricao": "Mouse",
     "quantidade": 381
+  },
+  "productIds": {
+    "validProductId": "BeeJh5lz3k6kSIzA",
+    "invalidProductId": "invalidId"
   }
+}
   

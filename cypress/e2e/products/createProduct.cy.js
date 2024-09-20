@@ -27,7 +27,7 @@ describe('Product Creation API Testing', () => {
       });
   
     it('POST create product - Duplicate Product Error', function() {
-      cy.createProduct(this.productData).then((response) => {
+      cy.createProduct(this.productData.validProduct).then((response) => {
         expect(response.status).to.eq(400);
         expect(response.body).to.have.property('message', 'Já existe produto com esse nome');
       });
