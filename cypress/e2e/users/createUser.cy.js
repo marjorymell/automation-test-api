@@ -1,6 +1,6 @@
 describe('Create User API Testing', () => {
     beforeEach(() => {
-      cy.fixture('credentials').as('userData');
+      cy.fixture('credentials').as('creds');
     });
   
     it('POST new user with success', function() {
@@ -22,7 +22,7 @@ describe('Create User API Testing', () => {
     it('POST user with validUser email should return error', function() {
       const existingUser = {
         nome: "User Invalid Test",
-        email: this.userData.validUser.email,
+        email: this.creds.validUser.email,
         password: "teste123",
         administrador: "true"
       };

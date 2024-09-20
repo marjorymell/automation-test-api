@@ -56,3 +56,16 @@ Cypress.Commands.add('deleteUser', (userId) => {
   });
 });
 
+Cypress.Commands.add('editUser', (userId, updatedUserData) => {
+  return cy.request({
+    method: 'PUT',
+    url: `/usuarios/${userId}`,
+    body: updatedUserData,
+    headers: { 'Content-Type': 'application/json' },
+    failOnStatusCode: false
+  }).then((response) => {
+    return response; 
+  });
+});
+
+
