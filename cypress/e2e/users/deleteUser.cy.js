@@ -1,9 +1,8 @@
 describe('Delete User API Testing', () => {
     let creds;
-
     before(() => {
         cy.fixture('credentials').then((data) => {
-            creds = data; // Armazena os dados da fixture em uma variável
+            creds = data; 
         });
 
         // Create a user before running the deletion tests
