@@ -4,7 +4,7 @@ describe('Get User by ID API Testing', () => {
     });
   
     it('GET user by valid ID', function() {
-      const validUserId = this.usersData.validUser.id; 
+      const validUserId = this.usersData.validUserAdmin.id; 
   
       cy.getUserById(validUserId).then((response) => {
         expect(response.status).to.eq(200); 

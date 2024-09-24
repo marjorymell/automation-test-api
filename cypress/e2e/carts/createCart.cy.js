@@ -56,7 +56,7 @@ describe('Create Cart API Testing', () => {
         });
     });
 
-    it('POST cart with not admin user error', function() {
+    it('POST user with cart already registered', function() {
         // Log in user with cart already registered
         cy.fixture('credentials').as('userData').then((userData) => {
           cy.login(userData.validUser.email, userData.validUser.password).then((response) => {
@@ -113,7 +113,7 @@ describe('Create Cart API Testing', () => {
             produtos: [
                 {
                   idProduto: 'dWAtwkc2I3nReI57',
-                  quantidade: 500 // Quantity higher than stock
+                  quantidade: 2000
                 },
                 {
                   idProduto: 'J1zV2I3plPDLmoCM',
