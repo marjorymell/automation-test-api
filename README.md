@@ -38,6 +38,7 @@ This project utilizes the following technologies and dependencies:
   - **cypress/e2e/products/**: Tests related to product management.
   - **cypress/e2e/carts/**: Tests related to cart management.
 - **cypress/plugins/**: Cypress plugins.
+- **cypress/fixtures/**: Project test data.
 - **cypress/support/**: Support files and configuration for Cypress.
 
 ## :mailbox_with_mail: Contact
