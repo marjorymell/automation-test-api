@@ -37,6 +37,21 @@ Cypress.Commands.add('cancelCart', () => {
   });
 });
 
+Cypress.Commands.add('deleteCart', () => {
+  const token = Cypress.env('token');
+  return cy.request({
+    method: 'DELETE',
+    url: `/carrinhos/concluir-compra`,
+    headers: { 
+      'Authorization': token,
+      'Content-Type': 'application/json' 
+    },
+    failOnStatusCode: false
+  }).then((response) => {
+    return response;
+  });
+});
+
 Cypress.Commands.add('getCartById', (cartId) => {
   return cy.request({
     method: 'GET',
