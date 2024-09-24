@@ -13,7 +13,7 @@ This project aims to automate the tests of the REST API [Serverest](https://serv
 
 ## :cd: Installation
 
-1. Ensure you have [Node.js](https://nodejs.org/) **v20.11.1** installed on your system.
+1. Ensure you have [Node.js](https://nodejs.org/) **^20.11.1** installed on your system.
 2. Clone this repository to your local machine:
 
    ```bash
