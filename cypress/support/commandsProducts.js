@@ -52,9 +52,26 @@ Cypress.Commands.add('deleteProduct', (productId) => {
     url: `/produtos/${productId}`,
     headers: { 
       'Authorization': token,
-      'Content-Type': 'application/json' },
+      'Content-Type': 'application/json' 
+    },
     failOnStatusCode: false
   }).then((response) => {
     return response;
+  });
+});
+
+Cypress.Commands.add('editProduct', (productId, updatedProductData) => {
+  const token = Cypress.env('token');
+  return cy.request({
+    method: 'PUT',
+    url: `/produtos/${productId}`,
+    body: updatedProductData,
+    headers: { 
+      'Authorization': token,
+      'Content-Type': 'application/json' 
+    },
+    failOnStatusCode: false
+  }).then((response) => {
+    return response; 
   });
 });

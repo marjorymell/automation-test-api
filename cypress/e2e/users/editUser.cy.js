@@ -52,8 +52,8 @@ describe('Edit User API Testing', () => {
         const updatedUserData = {
             nome: "Mel Updated",
             email: "fulano@qa.com", 
-            password: "teste123",
-            administrador: "false"
+            password: "teste",
+            administrador: "true"
         };
 
         cy.editUser(userId, updatedUserData).then((response) => {
