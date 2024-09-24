@@ -69,4 +69,15 @@ describe('Product Deleting API Testing', () => {
           expect(response.body).to.have.property('message', 'Rota exclusiva para administradores');
         });
       });
+
+      it('DELETE product with registered cart', function() {
+        const productInCart = productsData.productIds.productInCart; 
+
+        cy.deleteProduct(productInCart).then((response) => {
+            expect(response.status).to.eq(400);
+            expect(response.body).to.have.property('message', 'Não é permitido excluir produto que faz parte de carrinho');
+            expect(response.body).to.have.property('idCarrinhos').and.be.an('array');
+            expect(response.body.idCarrinhos.length).to.be.greaterThan(0);
+        });
+    });
   });

@@ -36,4 +36,14 @@ describe('Delete User API Testing', () => {
             expect(response.body).to.have.property('message', 'Nenhum registro excluído');
         });
     });
+
+    it('DELETE user with registered cart', function() {
+        const validUserAdmin = usersData.validUserAdmin.id; 
+
+        cy.deleteUser(validUserAdmin).then((response) => {
+            expect(response.status).to.eq(400);
+            expect(response.body).to.have.property('message', 'Não é permitido excluir usuário com carrinho cadastrado');
+            expect(response.body).to.have.property('idCarrinho');
+        });
+    });
 });
