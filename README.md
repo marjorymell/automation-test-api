@@ -13,7 +13,7 @@ This project aims to automate the tests of the REST API [Serverest](https://serv
 
 ## :cd: Installation
 
-1. Ensure you have [Node.js](https://nodejs.org/) installed on your system.
+1. Ensure you have [Node.js](https://nodejs.org/) **v20.11.1** installed on your system.
 2. Clone this repository to your local machine:
 
    ```bash
@@ -26,9 +26,9 @@ This project aims to automate the tests of the REST API [Serverest](https://serv
 
 This project utilizes the following technologies and dependencies:
 
-- **Cypress**: For test automation.
-- **Cypress-Plugin-Api**: To facilitate API testing.
-- **Eslint-Plugin-Cypress**: To ensure code quality.
+- **Cypress ^13.14.1**: For test automation.
+- **Cypress-Plugin-Api ^2.11.2**: To facilitate API testing.
+- **Eslint-Plugin-Cypress ^3.5.0**: To ensure code quality.
 
 ## :spiral_notepad: Project Structure
 
