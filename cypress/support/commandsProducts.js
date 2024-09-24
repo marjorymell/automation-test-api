@@ -44,3 +44,17 @@ Cypress.Commands.add('getProductById', (productId) => {
     return response; 
   });
 });
+
+Cypress.Commands.add('deleteProduct', (productId) => {
+  const token = Cypress.env('token');
+  return cy.request({
+    method: 'DELETE',
+    url: `/produtos/${productId}`,
+    headers: { 
+      'Authorization': token,
+      'Content-Type': 'application/json' },
+    failOnStatusCode: false
+  }).then((response) => {
+    return response;
+  });
+});
