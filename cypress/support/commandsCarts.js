@@ -36,3 +36,13 @@ Cypress.Commands.add('cancelCart', () => {
     return response;
   });
 });
+
+Cypress.Commands.add('getCartById', (cartId) => {
+  return cy.request({
+    method: 'GET',
+    url: `/carrinhos/${cartId}`, 
+    failOnStatusCode: false 
+  }).then((response) => {
+    return response; 
+  });
+});
