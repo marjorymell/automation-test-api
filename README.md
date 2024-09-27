@@ -17,7 +17,7 @@ This project aims to automate the tests of the REST API [Serverest](https://serv
 2. Clone this repository to your local machine:
 
    ```bash
-   git clone https://github.com/MarjoryMel/automation-test-api
+   git clone https://github.com/marjorymell/automation-test-api
    
 3. Open the terminal and run `npm install` to install all necessary dependencies.  
 4. After successful installation, run `npx cypress open` to start the tests.
@@ -47,7 +47,7 @@ To report bugs or request new features, please use the Issues section of the rep
 
 If you have any questions, suggestions, or need help with the project, feel free to reach out. Here are some ways to contact me:
 
-- **Nome**: Marjory Mel Ferreira Ferro Lemos
+- **Name**: Marjory Mel Ferreira Ferro Lemos
 - **Email**: [marjorymel48@gmail.com](mailto:marjorymel48l@gmail.com)
 - **LinkedIn**: [Marjory Lemos](www.linkedin.com/in/marjorymell)
 
